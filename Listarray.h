@@ -52,7 +52,7 @@ class ListArray : public List<T> {
 				    throw std::out_of_range("Posición fuera de rango");
 			    }
 			    if (n==max) {
-				    resize(new_size);
+				    resize(max*2);
 			    }
 			    for(int i=n; i>pos; i--) {
 				    arr[i]=arr[i-1];
@@ -62,13 +62,13 @@ class ListArray : public List<T> {
 		    }
 		    void append(T e){
 			    if(n==max){
-				    resize(new_size);
+				    resize(max*2);
 			    }
 			    arr[max];
 		    }
 		    void preppend(T e){
 			    if(n==max){
-				    resize(new_size);
+				    resize(max*2);
 			    }
 			    for (int i=n; i > 0; i--){
 				     arr[i]=arr[i - 1];
@@ -84,8 +84,8 @@ class ListArray : public List<T> {
 			for(int i= pos; i<n-1; i++){
 				arr[i]=arr[i+1];
 			}
-			if(max>1,5*n){
-				resize(new_size);
+			if(max>2*n){
+				resize(max/2);
 			}
 			return relement;
 		    }
@@ -109,6 +109,6 @@ class ListArray : public List<T> {
 		   }
 		   int size(){
 			   return n;
-		   };
-    }
+		   }
+    };
 
