@@ -12,6 +12,7 @@ ListArray<int> list;
 	        list.insert(0, 0);
 	        list.insert(1, 10);
                 list.insert(0, -5);
+		 std::cout << list << std::endl;
                 list.insert(2, 5);
                 std::cout << list << std::endl; 
                 std::cout << "size(): " << list.size() << std::endl; 
