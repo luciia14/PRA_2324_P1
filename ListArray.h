@@ -48,18 +48,20 @@ class ListArray : public List<T> {
 		          }
 //implmentación de LIST
 		    void insert(int pos, T e){
-			    if(pos < 0||pos >n){
-				    throw std::out_of_range("Posición fuera de rango");
-			    }
+
+			    if(pos < 0||pos >max){
+				   throw std::out_of_range("Posición fuera de rango");
+			   }
 			    if (n==max) {
 				    resize(max*2);
-			    }
+			   }
 			    for(int i=n; i>pos; i--) {
 				    arr[i]=arr[i-1];
                                          }
 			    arr[pos]=e;
-			    
+		            n++;
 		    }
+
 		    void append(T e){
 			    if(n==max){
 				    resize(max*2);
@@ -67,7 +69,7 @@ class ListArray : public List<T> {
 			    arr[n]=e;
 			    n++;
 		    }
-		    void preppend(T e){
+		    void prepend(T e){
 			    if(n==max){
 				    resize(max*2);
 			    }
